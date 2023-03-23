@@ -1,6 +1,7 @@
 class User < ApplicationRecord
+  has_many :recipes
+  
   has_secure_password
 
-  has_many :recipes
-  validates :username, uniqueness: true, presence: true
+  validates :username, presence: true, uniqueness: true
 end
